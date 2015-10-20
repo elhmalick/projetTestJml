@@ -1,3 +1,4 @@
+package source;
 class ExplosivesMain{
 
 	@org.jmlspecs.annotation.SkipRac

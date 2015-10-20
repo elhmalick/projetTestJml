@@ -1,3 +1,4 @@
+package source;
 // Based on a B specification from Marie-Laure Potet.
 
 public class Explosives{

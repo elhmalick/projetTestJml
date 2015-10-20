@@ -1,9 +1,12 @@
+package test;
 import static org.junit.Assert.*;
 
 import org.jmlspecs.utils.JmlAssertionError;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import source.Explosives;
 
 
 public class TestExplosivesJUnit4 {
