@@ -10,6 +10,9 @@ public class Explosives{
     /*@ public invariant // Prop 1
       @ (0 <= nb_inc && nb_inc < 50);
       @*/
+      //le nombre de paires de produits qui sont incompatible entre eux est inférieur à 50 et
+    //supérieur ou égal à 0. nb_inc sers aussi comme un compteur pour le tableau incomp et 
+    //exprime le fait que le compteur est positif et inférieur à 50 
     /*@ public invariant // Prop 2
       @ (0 <= nb_assign && nb_assign < 30);
       @*/
