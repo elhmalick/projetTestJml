@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import source.Explosives;
 
-
 public class TestExplosivesJUnit4 {
 
     static int nb_inconclusive = 0;
@@ -60,6 +59,45 @@ public class TestExplosivesJUnit4 {
 				handleJMLAssertionError(e);		
 		}  
 	}
-
+	
+	@Test
+	public void testSequence_1(){
+		try{
+		e=new Explosives();
+		e.nb_inc = -1;
+		}catch(JmlAssertionError e){
+			handleJMLAssertionError(e);		
+	}  
+	}
+	
+	@Test
+	public void testSequence_2(){
+		try{
+			e=new Explosives();
+			e.nb_assign = 35;
+			}catch(JmlAssertionError e){
+				handleJMLAssertionError(e);		
+		}  
+	}
+	
+	@Test
+	public void testSequence_3(){
+		try{
+			e=new Explosives();
+			e.add_incomp("Prod_C4", "GunPowder");
+		}catch(JmlAssertionError e){
+			handleJMLAssertionError(e);		
+	}  
+	}
+	
+	@Test
+	public void  testSequence_4(){
+		try{
+			e=new Explosives();
+			e.add_assign("some_building", "Carbonite");
+		}catch(JmlAssertionError e){
+			handleJMLAssertionError(e);		
+	}  
+	}
 
 }
