@@ -1,5 +1,5 @@
 // Based on a B specification from Marie-Laure Potet.
-
+package source;
 public class Explosives{
     public int nb_inc = 0;
     public String [][] incomp = new String[50][2];
