@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 
 import org.jmlspecs.utils.JmlAssertionError;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -77,6 +78,32 @@ public class TestExplosivesJUnit4 {
 		try{
 			e=new Explosives();
 			e.add_assign("some_building", "Carbonite");
+		}catch(JmlAssertionError e){
+			handleJMLAssertionError(e);		
+	}  
+	}
+	@Test 
+	public void testSequence_5(){
+		try{
+			e=new Explosives();
+			e.add_incomp("Prod_Fire", "Prod_Fire");
+		}catch(JmlAssertionError e){
+			handleJMLAssertionError(e);		
+	}  
+	}
+	
+	@Test
+	public void testSequence_6(){
+		//TO DO
+	}
+
+	@Test
+	public void testSequence_7(){
+		try{
+			e=new Explosives();
+			e.add_incomp("Prod_C4", "Prod_Dynamite");
+			e.add_assign("Bat_One", "Prod_C4");
+			e.add_assign("Bat_One", "Prod_Dynamite");
 		}catch(JmlAssertionError e){
 			handleJMLAssertionError(e);		
 	}  
