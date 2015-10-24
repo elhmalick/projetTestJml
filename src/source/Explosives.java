@@ -43,7 +43,7 @@ public class Explosives{
       @           (incomp[i][0]).equals(incomp[j][1]) 
       @              && (incomp[j][0]).equals(incomp[i][1]))); 
       @*/
-    //Pour un pair de produit A et B incompatible, on a forcement un le paire B et A incompatible
+    //Pour un pair de produit A et B incompatible, on a forcement un paire B et A incompatible
     
     /*@ public invariant // Prop 7
       @ (\forall int i; 0 <= i &&  i < nb_assign; 
@@ -56,6 +56,7 @@ public class Explosives{
     //Pour un batiment, on ne peut pas assigner deux produits qui sont incompatibles entre eux.
 
 
+    //@requires prod1.startsWith("Prod") && prod2.startsWith("Prod") && !(prod1.equals(prod2));
     public void add_incomp(String prod1, String prod2){
 	incomp[nb_inc][0] = prod1;
 	incomp[nb_inc][1] = prod2;
@@ -63,6 +64,7 @@ public class Explosives{
 	incomp[nb_inc+1][0] = prod2;
 	nb_inc = nb_inc+2;
      }
+    //@requires bat.startsWith("Bat") && prod.startsWith("Prod") /* && bat does not contain two incompatible prod */ ;
     public void add_assign(String bat, String prod){
 	assign[nb_assign][0] = bat;
 	assign[nb_assign][1] = prod;
