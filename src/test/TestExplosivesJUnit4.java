@@ -60,25 +60,7 @@ public class TestExplosivesJUnit4 {
 		}  
 	}
 	
-	@Test
-	public void testSequence_1(){
-		try{
-		e=new Explosives();
-		e.nb_inc = -1;
-		}catch(JmlAssertionError e){
-			handleJMLAssertionError(e);		
-	}  
-	}
 	
-	@Test
-	public void testSequence_2(){
-		try{
-			e=new Explosives();
-			e.nb_assign = 35;
-			}catch(JmlAssertionError e){
-				handleJMLAssertionError(e);		
-		}  
-	}
 	
 	@Test
 	public void testSequence_3(){
