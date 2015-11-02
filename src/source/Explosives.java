@@ -71,4 +71,26 @@ public class Explosives{
     
     public void skip(){
     }
+     /* fct compatible OK ! */
+    public boolean compatible(String prod1, String prod2){
+    	for(int i=0; i<nb_inc; i++){
+    		if(incomp[i][0].equals(prod1) && incomp[i][1].equals(prod2)) return false;
+    	}
+    	return true;
+    }
+    /* MARCHE PAS !
+    public String findBat(String prod){
+    	for(int i=0; i<nb_assign; i++){
+    			boolean b =false;
+    		for(int j=i; j<nb_assign; j++){
+    			if(assign[0][j].equals(assign[0][i])){
+    				if(compatible(assign[1][j], prod)){
+    					b = true;
+    				}
+    			}
+    		}
+    		if(b) return assign[0][i];
+    	}
+    	return null;
+    }*/
 }
