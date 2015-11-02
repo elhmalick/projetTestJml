@@ -68,6 +68,7 @@ public class Explosives{
 	assign[nb_assign][1] = prod;
 	nb_assign = nb_assign+1;
     }
+    
     public void skip(){
     }
 }
