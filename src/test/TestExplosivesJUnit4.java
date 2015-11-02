@@ -94,7 +94,12 @@ public class TestExplosivesJUnit4 {
 	
 	@Test
 	public void testSequence_6(){
-		//TO DO
+		try{
+			e=new Explosives();
+			e.add_incomp("Prod_Fire", "Prod_liquid");
+		}catch(JmlAssertionError e){
+			handleJMLAssertionError(e);		
+	}  
 	}
 
 	@Test
