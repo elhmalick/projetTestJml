@@ -1,9 +1,7 @@
 package test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
-import org.jmlspecs.utils.JmlAssertionError;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -96,12 +94,15 @@ public class TestExplosivesJUnit4 {
 	public void testSequence_6(){
 		try{
 			e=new Explosives();
-			e.add_incomp("Prod_Fire", "Prod_liquid");
+			e.incomp[1][0] = "Prod_abc";
+			e.incomp[1][1] = "Pro_kjn";
+			//e.add_incomp("Prod_kl", "Prod_hm");
+			e.skip();
 		}catch(JmlAssertionError e){
-			handleJMLAssertionError(e);		
-	}  
+			handleJMLAssertionError(e);
+		}
 	}
-
+	
 	@Test
 	public void testSequence_7(){
 		try{
