@@ -90,18 +90,6 @@ public class TestExplosivesJUnit4 {
 	}  
 	}
 	
-	@Test
-	public void testSequence_6(){
-		try{
-			e=new Explosives();
-			e.incomp[1][0] = "Prod_abc";
-			e.incomp[1][1] = "Pro_kjn";
-			//e.add_incomp("Prod_kl", "Prod_hm");
-			e.skip();
-		}catch(JmlAssertionError e){
-			handleJMLAssertionError(e);
-		}
-	}
 	
 	@Test
 	public void testSequence_7(){
