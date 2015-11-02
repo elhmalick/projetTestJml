@@ -67,4 +67,17 @@ public class TestExplosivesJUnit4Public {
 				handleJMLAssertionError(e);		
 		}  
 	}
+		/*Test 6 reviewed */
+	@Test
+	public void testSequence_6(){
+		try{
+			
+			e.incomp[1][0] = "Prod_abc";
+			e.incomp[1][1] = "Pro_kjn";
+			//e.add_incomp("Prod_kl", "Prod_hm");
+			//e.skip();
+		}catch(JmlAssertionError e){
+			handleJMLAssertionError(e);
+		}
+	}
 }
