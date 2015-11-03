@@ -90,8 +90,6 @@ public class TestExplosivesJUnit4 {
 	}  
 	}
 	
-	
-	
 	@Test
 	public void testSequence_7(){
 		try{
