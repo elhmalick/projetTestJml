@@ -1,12 +1,10 @@
 package test;
 
-import static org.junit.Assert.fail;
-
 import org.jmlspecs.utils.JmlAssertionError;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
+import static org.junit.Assert.*;
 import source.Explosives;
 
 public class TestExplosivesJUnit4Public {
@@ -67,7 +65,7 @@ public class TestExplosivesJUnit4Public {
 				handleJMLAssertionError(e);		
 		}  
 	}
-		/*Test 6 reviewed */
+		
 	@Test
 	public void testSequence_6(){
 		try{

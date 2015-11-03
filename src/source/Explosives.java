@@ -1,5 +1,9 @@
 // Based on a B specification from Marie-Laure Potet.
 package source;
+
+import java.util.HashSet;
+import java.util.Set;
+
 public class Explosives{
     public int nb_inc = 0;
     public String [][] incomp = new String[50][2];
@@ -62,6 +66,8 @@ public class Explosives{
 	incomp[nb_inc+1][0] = prod2;
 	nb_inc = nb_inc+2;
      }
+    
+    
     //@requires bat.startsWith("Bat") && prod.startsWith("Prod") /* && bat does not contain two incompatible prod */ ;
     public void add_assign(String bat, String prod){
 	assign[nb_assign][0] = bat;
@@ -70,27 +76,39 @@ public class Explosives{
     }
     
     public void skip(){
+    	
     }
-     /* fct compatible OK ! */
-    public boolean compatible(String prod1, String prod2){
+     
+    public /* @ pure helper @ */  boolean compatible(String prod1, String prod2){
     	for(int i=0; i<nb_inc; i++){
-    		if(incomp[i][0].equals(prod1) && incomp[i][1].equals(prod2)) return false;
+    		if(incomp[i][0].equals(prod1) && incomp[i][1].equals(prod2)) 
+    			return false;
     	}
     	return true;
     }
-    /* MARCHE PAS !
+    
+    //@requires prod.startsWith("Prod");
+    /*@ensures
+      @        (\forall int i; 0 <= i && i < nb_assign;
+      @           (assign[i][0].equals(\result))
+	  @					&& (compatible(assign[i][1], prod)));
+      @*/
     public String findBat(String prod){
-    	for(int i=0; i<nb_assign; i++){
-    			boolean b =false;
-    		for(int j=i; j<nb_assign; j++){
-    			if(assign[0][j].equals(assign[0][i])){
-    				if(compatible(assign[1][j], prod)){
-    					b = true;
-    				}
-    			}
-    		}
-    		if(b) return assign[0][i];
-    	}
-    	return null;
-    }*/
+    	// On parcours la liste assign et pour chaque batiment on test 
+    	//tous les produits qu'ils contient s'ils sont compatibles avec le produit en parametre
+		for (int i = 0; i < nb_assign; i++) {
+			boolean b = true;
+			for (int j = 0; b == true && j < nb_assign; j++) {
+
+				if (assign[i][0].equals(assign[j][0])
+						&& !compatible(assign[j][1], prod))
+					b = false;
+
+			}
+
+			if (b)
+				return assign[i][0];
+		}
+		return null;
+    }
 }

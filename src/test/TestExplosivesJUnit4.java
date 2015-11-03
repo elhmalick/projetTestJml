@@ -1,9 +1,9 @@
 package test;
-import static org.junit.Assert.fail;
-
+import org.jmlspecs.utils.JmlAssertionError;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 import source.Explosives;
 
@@ -28,7 +28,7 @@ public class TestExplosivesJUnit4 {
 	    // test failure	
 	    nb_fail++;
 	    fail("\n\t" + e.getMessage());	
-		}  
+		}  		
     }
 	
     
@@ -90,18 +90,7 @@ public class TestExplosivesJUnit4 {
 	}  
 	}
 	
-	@Test
-	public void testSequence_6(){
-		try{
-			e=new Explosives();
-			e.incomp[1][0] = "Prod_abc";
-			e.incomp[1][1] = "Pro_kjn";
-			//e.add_incomp("Prod_kl", "Prod_hm");
-			e.skip();
-		}catch(JmlAssertionError e){
-			handleJMLAssertionError(e);
-		}
-	}
+	
 	
 	@Test
 	public void testSequence_7(){
